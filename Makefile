@@ -1,3 +1,4 @@
+ULIST_DIR?=~/codes/application/ulist
 SRCS:=$(wildcard *.c)
 OBJS:=$(patsubst %.c,%.o,$(SRCS))
 LIB:=ulog.a
@@ -7,7 +8,7 @@ LIB:=ulog.a
 all:lib
 
 $(OBJS):
-	$(CC) -o $@ -c $(patsubst %.o,%.c,$@) $(CFLAGS)
+	$(CC) -o $@ -c $(patsubst %.o,%.c,$@) $(CFLAGS) -I $(ULIST_DIR)
 
 lib:$(OBJS)
 	$(AR) r $(LIB) $(OBJS)

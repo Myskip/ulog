@@ -47,7 +47,7 @@ typedef struct
 typedef enum{
     ULOG_ERR_SUCCESS = 0,
     ULOG_ERR = -1,
-    ULONG_ERR_ALREADY_INIT = -2,
+    ULOG_ERR_ALREADY_INIT = -2,
 }ULOG_ERR_CODE;
 
 #define ULOG(module, level, fmt, args...) ulog(__FILE__, __LINE__, module, level, fmt, ##args)
@@ -63,5 +63,5 @@ void ulog_unregister(ULOG_MODULE *module);
 int ulog_set_bufsize(int buf_size);
 void ulog(char *file, int line, const ULOG_MODULE *module, unsigned int level, const char *fmt, ...);
 int ulog_is_inited();
-
+void ulog_show_modules();
 #endif
